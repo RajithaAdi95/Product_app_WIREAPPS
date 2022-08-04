@@ -1,0 +1,13 @@
+$background-light: #9575CD;
+
+.bold-font {
+    font-weight: bold;
+}
+
+.back-btn {
+    background-color: $background-light;
+    margin-top: 8px;
+    width: max-content;
+    padding: 5px 12px;
+    cursor: pointer;
+}

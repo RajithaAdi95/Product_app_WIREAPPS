@@ -1,0 +1,19 @@
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div fxFlex>
+      <div>
+        <h3> Products sMenu </h3>
+        <hr>
+      </div>
+    </div>
+  
+    <div fxFlex *ngIf="this.products">
+      <mat-grid-list cols="2" rowHeight="250px">
+        <mat-grid-tile *ngFor="let product of this.products" [routerLink]="['/product', product.id]" appHighlight>
+          <img height="200px" src="{{  product.mainImage }}" alt="{{product.brandName}}">
+          <mat-grid-tile-footer>
+            <h1> {{product.name}} - {{product.brandName | uppercase}} - {{product.stockStatus}} </h1>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+</div>

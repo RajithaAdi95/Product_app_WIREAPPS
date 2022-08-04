@@ -1,0 +1,43 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40" *ngIf="product">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+            <h3 *ngIf="product">{{product.name | uppercase}}</h3>
+            </mat-card-title>
+        <mat-card-actions>
+            <button mat-button class="back-btn" (click)="goBack()"> BACK TO HOME </button>
+        </mat-card-actions>
+      </mat-card-header>
+      <img mat-card-image src="{{product.mainImage}}" alt="{{product.name}}">
+      
+    </mat-card>
+  </div>
+
+  <div fxFlex="40" *ngIf="product">
+    <mat-list>
+      <h1> Details </h1>
+      <mat-list-item>
+        <h1 matLine> <span class="bold-font"> SKU - </span> {{product.SKU}} </h1>
+        <h1 matLine> <span class="bold-font"> Name - </span> {{product.name}} </h1>
+        <h1 matLine> <span class="bold-font"> BrandName - </span> {{product.brandName}} </h1>
+        <h1 matLine> <span class="bold-font"> Price - </span> {{product.price.amount}} {{product.price.currency}}  </h1>
+        <h1 matLine> <span class="bold-font"> Sizes - </span> 
+            <span *ngFor="let size of product.sizes">
+                {{size}}
+            </span>     
+        </h1>
+        <h1 matLine> <span class="bold-font"> StockStatus - </span> {{product.stockStatus}} </h1>
+        <h1 matLine> <span class="bold-font"> Colour - </span> {{product.colour}} </h1>
+        <h1 matLine> <span class="bold-font"> Description - </span> {{product.description}} </h1>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
